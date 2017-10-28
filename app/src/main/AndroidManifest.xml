@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.bqt.intentservice">
+
+    <application
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".MyIntentService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.test.intentservice"/>
+            </intent-filter>
+        </service>
+        <service android:name=".ForegroundService"/>
+        <service android:name=".LongRunningService"/>
+
+        <receiver android:name=".AlarmReceiver"/>
+    </application>
+
+</manifest>
